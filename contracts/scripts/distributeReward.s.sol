@@ -11,9 +11,9 @@ import {IStake} from "../src/interfaces/IStake.sol";
         --ffi --broadcast --rpc-url https://network.ambrosus-test.io --legacy
 */
 contract DistributeRewardScript is Script {
-    IStake stake = IStake(0x73B4A6E4E229AD89135343D4A1bC07e4D1789CCb);
+    IStake stake = IStake(vm.envAddress("CONTRACT_ADDRESS"));
     uint256 amountToDistribute = 10000e18;
-    address rewardToken = 0xDBB98f31Bc6b6DB303E8cb761f1b5A96B1016d64;
+    address rewardToken = vm.envAddress("REWARD_TOKEN");
 
     function run() public {
         uint256 pk = vm.envUint("PRIVATE_KEY");

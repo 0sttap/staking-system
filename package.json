@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "server-start": "cd backend && npm start",
+        "test-contracts": "cd contracts && forge test -vvv",
+        "deploy-contracts": "cd contracts && forge script deploy/StakeDeploy.s.sol --ffi --broadcast --rpc-url https://network.ambrosus-test.io --legacy",
+        "stake": "cd contracts && forge script scripts/stake.s.sol --ffi --broadcast --rpc-url https://network.ambrosus-test.io --legacy",
+        "withdraw": "cd contracts && forge script scripts/withdraw.s.sol --ffi --broadcast --rpc-url https://network.ambrosus-test.io --legacy",
+        "distribute": "cd contracts && forge script scripts/distributeReward.s.sol --ffi --broadcast --rpc-url https://network.ambrosus-test.io --legacy",
+        "claim": "cd contracts && forge script scripts/claimRewards.s.sol --ffi --broadcast --rpc-url https://network.ambrosus-test.io --legacy",
+        "install-dep": "cd backend && npm install"
+    }
+}
