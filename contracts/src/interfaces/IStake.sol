@@ -35,4 +35,8 @@ interface IStake {
     /// @notice Get stakers.
     /// @return stakers The list of stakers.
     function getStakers() external view returns (address[] memory stakers);
+
+    /// @notice Get stakers count.
+    /// @return count The count of stakers.
+    function getStakersCount() external view returns (uint256 count);
 }

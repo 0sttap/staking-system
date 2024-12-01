@@ -25,7 +25,6 @@ contract Stake is Ownable, IStake {
     constructor(address _stakingToken, address _rewardToken) Ownable(msg.sender) {
         stakingToken = IERC20(_stakingToken);
         rewardToken = IERC20(_rewardToken);
-        lastRewardTime = block.timestamp;
     }
 
     /// @inheritdoc IStake
@@ -85,6 +84,10 @@ contract Stake is Ownable, IStake {
     /// @inheritdoc IStake
     function getStakers() external view returns (address[] memory stakers) {
         stakers = _stakers.values();
+    }
+
+    function getStakersCount() external view returns (uint256 count) {
+        count = _stakers.length();
     }
 
     function _withdraw(uint256 _amount) internal {
