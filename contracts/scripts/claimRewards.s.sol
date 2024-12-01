@@ -11,7 +11,7 @@ import {IStake} from "../src/interfaces/IStake.sol";
         --ffi --broadcast --rpc-url https://network.ambrosus-test.io --legacy
 */
 contract ClaimRewardsScript is Script {
-    IStake stake = IStake(0x73B4A6E4E229AD89135343D4A1bC07e4D1789CCb);
+    IStake stake = IStake(vm.envAddress("CONTRACT_ADDRESS"));
 
     function run() public {
         uint256 pk = vm.envUint("PRIVATE_KEY");
